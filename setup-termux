@@ -14,7 +14,7 @@ cp -r ~/dotfiles/{.zshrc,.zprofile} ~/
 cp -r ~/dotfiles/.local ~/ && cp -r ~/dotfiles/.config/. ~/
 chmod +x ~/.local/bin/scripts/*
 
-pkg install -y man bc x11-repo apt \
+pkg install -y man bc x11-repo \
 proot root-repo tsu \
 fd bat lsd exa tree ripgrep \
 mpd ncmpcpp mpv cava \
