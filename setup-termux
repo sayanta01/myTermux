@@ -10,8 +10,8 @@ export COLUMNS LINES
 pkg update && pkg upgrade
 mkdir ~/{desk,dox,dl,music,templates,pub,pix,vids,code,imp} 
 
-cp -r ~/dotfiles/{.zshrc,.zprofile} ~/
-cp -r ~/dotfiles/.local ~/ && cp -r ~/dotfiles/.config/. ~/
+cp -r ~/myTermux/{.zshrc,.zprofile} ~/
+cp -r ~/myTermux/.local ~/ && cp -r ~/dotfiles/.config/. ~/
 chmod +x ~/.local/bin/scripts/*
 
 pkg install -y man bc x11-repo zsh \
