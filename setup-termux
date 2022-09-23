@@ -16,7 +16,7 @@ chmod +x ~/.local/bin/scripts/*
 
 pkg install -y man bc x11-repo \
 proot root-repo tsu \
-fd bat lsd exa tree ripgrep \
+fd bat exa tree ripgrep \
 mpd ncmpcpp mpv cava \
 ffmpeg imagemagick termimage \
 zip unrar tar lf \
