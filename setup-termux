@@ -1,0 +1,42 @@
+#!/bin/sh
+
+# create user & set pswd
+# termux-setup-storage    #internal acess
+
+export COLUMNS LINES
+#cursor underline    
+# echo -e "\e[4 q"
+
+pkg update && pkg upgrade
+mkdir ~/{desk,dox,dl,music,templates,pub,pix,vids,code,imp} 
+
+cp -r ~/dotfiles/{.zshrc,.zprofile} ~/
+cp -r ~/dotfiles/.local ~/ && cp -r ~/dotfiles/.config/. ~/
+#delete unused config files
+chmod +x ~/.local/bin/scripts/*
+
+
+pkg install -y man bc x11-repo apt \
+proot root-repo tsu \
+fd bat lsd exa tree \
+mpd ncmpcpp mpv cava \
+ffmpeg imagemagick termimage \
+zip unrar tar lf \
+axel wget rsync openssh \
+htop ncdu procs \
+tmux zsh fzf \
+rxfetch cowsay termux-api inotify-tools \
+neovim clang nodejs ccls shfmt shellcheck stylua xclip
+#change mpd music path to "/data/data/com.termux/files/home/storage/shared/Music"
+# dnsutils php android-tools qit  
+
+# Packer install
+git clone --depth 1 https://github.com/wbthomason/packer.nvim \
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.config/zsh/zsh-syntax-highlighting 
+git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.config/zsh/zsh-autosuggestions
+#add path in zshrc
+
+ 
+
