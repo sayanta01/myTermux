@@ -32,7 +32,6 @@ local options = {
   },
   view = {
     width = 28,
-   -- height = 28,
     hide_root_folder = false,
     side = "left",
   },
