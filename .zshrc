@@ -95,6 +95,12 @@ PROMPT=' %b%{$fg[green]%}%{$fg[red]%}${vcs_info_msg_0_}%  '
 alias fix='sudo dpkg --configure -a; sudo apt --fix-broken install -y; sudo apt install -f; sudo apt update --fix-missing'
 alias clean='sudo apt -y autoremove; sudo apt clean'
 
+alias reload="termux-reload-settings"
+alias terper="termux-setup-storage"
+alias bigfile="du -h -x -s -- * | sort -r -h | head -20"
+alias pf="cd $PREFIX"
+alias st="cd /storage"
+
 alias ll="exa --icons -lgha --group-directories-first"
 alias lm='ls -t -1'
 alias l.='exa -a | egrep "^\."'
