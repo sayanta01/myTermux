@@ -25,6 +25,10 @@ rxfetch cowsay termux-api inotify-tools \
 neovim clang nodejs ccls shfmt shellcheck stylua 
 # dnsutils php android-tools qit xclip
 
+# Nvim dependences
+pip install pynvim black flake8 sourcery 
+npm i -g prettier astyle luacheck emmet eslint html tailwindcss live-server
+
 # Packer install
 git clone --depth 1 https://github.com/wbthomason/packer.nvim \
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
