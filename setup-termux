@@ -1,6 +1,7 @@
 #!/bin/sh
 
 # create user & set pswd
+# user xdg-opne for play video
 
 export COLUMNS LINES
 #cursor underline    
