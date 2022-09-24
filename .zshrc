@@ -92,8 +92,11 @@ PROMPT=' %b%{$fg[green]%}%{$fg[red]%}${vcs_info_msg_0_}%  '
 
 
 ##### ALIAS #####
-alias fix='sudo dpkg --configure -a; sudo apt --fix-broken install -y; sudo apt install -f; sudo apt update --fix-missing'
-alias clean='sudo apt -y autoremove; sudo apt clean'
+alias fix='dpkg --configure -a; apt --fix-broken install -y; apt install -f; apt update --fix-missing'
+alias clean='apt -y autoremove; apt clean'
+alias install='apt install'
+alias remove='apt remove --purge'
+alias update='apt update && apt upgrade'
 
 alias reload="termux-reload-settings"
 alias terper="termux-setup-storage"
