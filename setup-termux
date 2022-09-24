@@ -23,8 +23,8 @@ axel wget rsync openssh \
 htop ncdu procs \
 tmux zsh fzf \
 rxfetch cowsay termux-api inotify-tools \
-neovim clang nodejs ccls shfmt shellcheck stylua xclip
-# dnsutils php android-tools qit  
+neovim clang nodejs ccls shfmt shellcheck stylua 
+# dnsutils php android-tools qit xclip
 
 # Packer install
 git clone --depth 1 https://github.com/wbthomason/packer.nvim \
