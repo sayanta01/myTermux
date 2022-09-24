@@ -13,7 +13,7 @@ mkdir ~/{desk,dox,dl,music,templates,pub,pix,vids,code,imp}
 cp -r ~/myTermux/{.colorscheme,.config,.local,.termux,.zshrc,.zprofile} ~/
 chmod +x ~/.local/bin/scripts/*
 
-pkg install -y man bc x11-repo zsh \
+pkg install -y man bc x11-repo \
 proot root-repo tsu \
 fd bat exa tree ripgrep \
 mpd ncmpcpp mpv cava \
