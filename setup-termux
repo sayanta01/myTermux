@@ -1,7 +1,6 @@
 #!/bin/sh
 
 # create user & set pswd
-# termux-setup-storage    #internal acess
 
 export COLUMNS LINES
 #cursor underline    
