@@ -12,15 +12,15 @@ mkdir ~/{desk,dox,dl,music,templates,pub,pix,vids,code,imp}
 cp -r ~/myTermux/{.colorscheme,.config,.local,.termux,.zshrc,.zprofile} ~/
 chmod +x ~/.local/bin/scripts/*
 
-pkg install -y man bc x11-repo \
+pkg install -y man bc \
 proot root-repo tsu \
 fd bat exa tree ripgrep \
 mpd ncmpcpp mpv cava \
 ffmpeg imagemagick termimage \
 zip unrar tar lf \
-axel wget rsync openssh \
+axel wget rsync \
 htop ncdu procs \
-tmux zsh fzf \
+tmux zsh fzf x11-repo \
 rxfetch cowsay termux-api inotify-tools \
 neovim clang nodejs ccls shfmt shellcheck stylua 
 # dnsutils php android-tools qit xclip
