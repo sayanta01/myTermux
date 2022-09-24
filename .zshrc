@@ -151,6 +151,7 @@ alias copy='rsync --progress -auv'
 #alias rm='trash'
 alias pu='pushd'
 alias po='popd'
+alias iv='termimage'
 alias mpc='mpd ; ncmpcpp'
 alias wget="wget --hsts-file=/dev/null"
 alias vim='nvim'
