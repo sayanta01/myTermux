@@ -28,7 +28,7 @@ neovim clang nodejs ccls shfmt shellcheck stylua
 
 # Nvim dependences
 pip install pynvim black flake8 sourcery 
-npm i -g prettier astyle luacheck emmet eslint html tailwindcss live-server
+npm i -g prettier astyle truecallerjs luacheck emmet eslint html tailwindcss live-server
 
 # Packer install
 git clone --depth 1 https://github.com/wbthomason/packer.nvim \
