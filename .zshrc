@@ -112,6 +112,10 @@ alias la='exa --icons'
 alias lt="exa --icons --tree"
 alias lsn='exa | wc -l'
 
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
 alias cp="cp -iv"
 alias mv='mv -iv'
 alias rm='rm -iv'
@@ -137,6 +141,7 @@ alias newtag='git tag -a'
 
 alias rr='curl https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash'
 alias hst="history 1 -1 | cut -c 8- | sort | uniq | fzf | tr -d '\n' | xclip -sel c"
+alias bigfile="du -h -x -s -- * | sort -r -h | head -20"
 alias fonts="magick convert -list font | grep -iE 'font:.*'"
 alias typer='xdg-open https://10fastfingers.com/typing-test/english'
 alias myip='curl ifconfig.me; echo'
