@@ -108,6 +108,8 @@ alias st="cd /storage"
 alias ll="exa --icons -lgha --group-directories-first"
 alias lm='ls -t -1'
 alias l.='exa -a | egrep "^\."'
+alias ld='ls -d */'
+alias l-='ls -p | grep -v /'
 alias ls='ls --color=auto'
 alias la='exa --icons'
 alias lt="exa --icons --tree"
