@@ -94,26 +94,25 @@ PROMPT=' %b%{$fg[green]%}%{$fg[red]%}${vcs_info_msg_0_}%  '
 
 ##### ALIAS #####
 alias fix='dpkg --configure -a; apt --fix-broken install -y; apt install -f; apt update --fix-missing'
-alias clean='apt -y autoremove; apt clean'
 alias install='apt install'
-alias remove='apt remove --purge'
 alias update='apt update && apt upgrade'
+alias clean='apt -y autoremove; apt clean'
+alias remove='apt remove --purge'
 
 alias reload="termux-reload-settings"
 alias terper="termux-setup-storage"
-alias bigfile="du -h -x -s -- * | sort -r -h | head -20"
 alias pf="cd $PREFIX"
 alias st="cd /storage"
 
+alias la='exa --icons'
+alias ls='ls --color=auto'
+alias lt="exa --icons --tree"
 alias ll="exa --icons -lgha --group-directories-first"
 alias lm='ls -t -1'
-alias l.='exa -a | egrep "^\."'
 alias ld='ls -d */'
-alias l-='ls -p | grep -v /'
-alias ls='ls --color=auto'
-alias la='exa --icons'
-alias lt="exa --icons --tree"
 alias lsn='exa | wc -l'
+alias l-='ls -p | grep -v /'
+alias l.='exa -a | egrep "^\."'
 
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
@@ -143,26 +142,30 @@ alias tag='git tag'
 alias newtag='git tag -a'
 
 alias rr='curl https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash'
-alias hst="history 1 -1 | cut -c 8- | sort | uniq | fzf | tr -d '\n' | xclip -sel c"
-alias bigfile="du -h -x -s -- * | sort -r -h | head -20"
-alias fonts="magick convert -list font | grep -iE 'font:.*'"
 alias typer='xdg-open https://10fastfingers.com/typing-test/english'
 alias myip='curl ifconfig.me; echo'
-alias ports='netstat -tulanp'
+
+alias hst="history 1 -1 | cut -c 8- | sort | uniq | fzf | tr -d '\n' | xclip -sel c"
+alias fonts="magick convert -list font | grep -iE 'font:.*'"
+alias bigfile="du -h -x -s -- * | sort -r -h | head -20"
 alias psmem='ps axch -o cmd,%mem --sort=-%mem | head'
 alias pscpu='ps axch -o cmd,%cpu --sort=-%cpu | head'
-alias ffmpeg='ffmpeg -hide_banner'
 
-alias free='free -h'
 alias ping='ping -c 7'
+alias ports='netstat -tulanp'
+alias copy='rsync --progress -auv'
+
+
 alias df='df -h'
+alias free='free -h'
 alias bat='bat --theme OneHalfDark'
 alias cat='bat --theme OneHalfDark -p'
-alias copy='rsync --progress -auv'
 #alias rm='trash'
 alias pu='pushd'
 alias po='popd'
+alias ffmpeg='ffmpeg -hide_banner'
+alias wget="wget --hsts-file=/dev/null"
+
 alias iv='termimage'
 alias mpc='mpd ; ncmpcpp'
-alias wget="wget --hsts-file=/dev/null"
 alias vim='nvim'
