@@ -155,7 +155,6 @@ alias ping='ping -c 7'
 alias ports='netstat -tulanp'
 alias copy='rsync --progress -auv'
 
-
 alias df='df -h'
 alias free='free -h'
 alias bat='bat --theme OneHalfDark'
