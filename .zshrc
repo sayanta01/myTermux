@@ -121,6 +121,7 @@ alias egrep='egrep --color=auto'
 alias cp="cp -iv"
 alias mv='mv -iv'
 alias rm='rm -iv'
+alias c='clear'
 alias mkdir='mkdir -pv'
 
 alias diff='diff --color=auto'
