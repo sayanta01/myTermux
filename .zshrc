@@ -13,6 +13,7 @@ setopt promptsubst          # enable command substitution in prompt
 # Configure keybindings
 bindkey -e                                        # emacs key bindings
 bindkey -s '^o' 'lf^M'
+bindkey -s '^r' 'hst^M'
 bindkey -s '^t' 'tmux^M'
 bindkey ' ' magic-space                           # history expansion on space
 bindkey '^U' backward-kill-line                   # ctrl + u
@@ -68,7 +69,7 @@ setopt hist_verify             # show command with history expansion to user bef
 
 # Plugins
 source ~/.zprofile
-source ~/.config/zsh/zsh-fzf-history-search.zsh 2>/dev/null
+#source ~/.config/zsh/zsh-fzf-history-search.zsh 2>/dev/null
 source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
 
@@ -147,7 +148,7 @@ alias rr='curl https://raw.githubusercontent.com/keroserene/rickrollrc/master/ro
 alias typer='xdg-open https://10fastfingers.com/typing-test/english'
 alias myip='curl ifconfig.me; echo'
 
-alias hst="history 1 -1 | cut -c 8- | sort | uniq | fzf | tr -d '\n' | xclip -sel c"
+alias hst="history -i 99 | tac | cut -c 8- | fzf | tr -d '\n' | xclip -sel c"
 alias fonts="magick convert -list font | grep -iE 'font:.*'"
 alias bigfile="du -h -x -s -- * | sort -r -h | head -20"
 alias psmem='ps axch -o cmd,%mem --sort=-%mem | head'
