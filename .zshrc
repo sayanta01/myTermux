@@ -117,8 +117,8 @@ alias l-='ls -p | grep -v /'
 alias l.='exa -a | egrep "^\."'
 
 alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
+#alias fgrep='fgrep --color=auto'
+#alias egrep='egrep --color=auto'
 
 alias cp="cp -iv"
 alias mv='mv -iv'
@@ -128,8 +128,8 @@ alias mkdir='mkdir -pv'
 
 alias diff='diff --color=auto'
 alias ip='ip --color=auto'
-alias dir='dir --color=auto'
-alias vdir='vdir --color=auto'
+#alias dir='dir --color=auto'
+#alias vdir='vdir --color=auto'
 
 alias add.='git add .'
 alias addup='git add -u'
@@ -145,11 +145,16 @@ alias pull='git pull origin'
 alias push='git push origin'
 
 alias rr='curl https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash'
+alias cht='sh -c '\''curl cheat.sh/$1'\'' _'
+alias wttr_='sh -c '\''curl wttr.in/$1'\'' _'
 alias typer='xdg-open https://10fastfingers.com/typing-test/english'
 alias myip='curl ifconfig.me; echo'
+alias php-server='php -S 0.0.0.0:8000'
+alias python-server='python -m http.server 8000'
 
 alias hst="history -i 99 | tac | cut -c 8- | fzf | tr -d '\n' | xclip -sel c"
 alias fonts="magick convert -list font | grep -iE 'font:.*'"
+alias find_='sh -c '\''find $@ 2>&1 | grep -v "Permission denied" >&2'\'' _'
 alias bigfile="du -h -x -s -- * | sort -r -h | head -20"
 alias psmem='ps axch -o cmd,%mem --sort=-%mem | head'
 alias pscpu='ps axch -o cmd,%cpu --sort=-%cpu | head'
@@ -161,11 +166,12 @@ alias copy='rsync --progress -auv'
 alias df='df -h'
 alias du='du -h'
 alias free='free -h'
+alias bc='bc -q'
 alias bat='bat --theme OneHalfDark'
 alias cat='bat --theme OneHalfDark -p'
-#alias rm='trash'
 alias pu='pushd'
 alias po='popd'
+alias shred='shred -uvzn3'
 alias ffmpeg='ffmpeg -hide_banner'
 alias wget="wget --hsts-file=/dev/null"
 
