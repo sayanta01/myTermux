@@ -61,7 +61,7 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 # History configurations
 HISTSIZE=2000
 SAVEHIST=2000
-#HISTFILE=~/.local/share/history
+HISTFILE=~/.zsh_history
 setopt hist_ignore_space       # ignore commands that start with space
 setopt hist_expire_dups_first  # delete duplicates first when HISTFILE size exceeds HISTSIZE
 setopt hist_ignore_all_dups    # ignore duplicated commands history list
@@ -114,7 +114,7 @@ alias lm='ls -t -1'
 alias ld='ls -d */'
 alias lsn='exa | wc -l'
 alias l-='ls -p | grep -v /'
-alias l.='exa -a | egrep "^\."'
+alias l.='exa -a | grep "^\."'
 
 alias grep='grep --color=auto'
 #alias fgrep='fgrep --color=auto'
