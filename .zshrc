@@ -114,11 +114,7 @@ alias lm='ls -t -1'
 alias ld='ls -d */'
 alias lsn='exa | wc -l'
 alias l-='ls -p | grep -v /'
-alias l.='exa -a | grep "^\."'
-
-alias grep='grep --color=auto'
-#alias fgrep='fgrep --color=auto'
-#alias egrep='egrep --color=auto'
+alias l.='exa -a | grep -E "^\."'
 
 alias cp="cp -iv"
 alias mv='mv -iv'
@@ -126,6 +122,7 @@ alias rm='rm -iv'
 alias cr='clear'
 alias mkdir='mkdir -pv'
 
+alias grep='grep --color=auto'
 alias diff='diff --color=auto'
 alias ip='ip --color=auto'
 #alias dir='dir --color=auto'
