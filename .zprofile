@@ -10,7 +10,6 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
  --color=marker:#87ff00,spinner:#972eff,header:#87afaf'
  
 # Paths
-# export PATH=$PATH:$HOME/.local/bin
 export PATH="$PATH:$(du "$HOME/.local/bin" | cut -f2 | paste -sd ':')"
 export PATH=$PATH:$HOME/.local/share/cargo/bin
 
