@@ -12,7 +12,7 @@ setopt promptsubst          # enable command substitution in prompt
 
 # Configure keybindings
 bindkey -e                                        # emacs key bindings
-bindkey -s '^o' 'lfub^M'
+bindkey -s '^o' 'lf^M'
 bindkey -s '^r' 'hst^M'
 bindkey -s '^t' 'tmux^M'
 bindkey ' ' magic-space                           # history expansion on space
@@ -125,8 +125,6 @@ alias mkdir='mkdir -pv'
 alias grep='grep --color=auto'
 alias diff='diff --color=auto'
 alias ip='ip --color=auto'
-#alias dir='dir --color=auto'
-#alias vdir='vdir --color=auto'
 
 alias add.='git add .'
 alias addup='git add -u'
@@ -142,6 +140,7 @@ alias pull='git pull origin'
 alias push='git push origin'
 
 alias rr='curl https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash'
+alias speedtest='curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -'
 alias cht='sh -c '\''curl cheat.sh/$1'\'' _'
 alias rate='sh -c '\''curl rate.sx/$1'\'' _'
 alias wttr_='sh -c '\''curl wttr.in/$1'\'' _'
@@ -164,7 +163,7 @@ alias copy='rsync --progress -auv'
 alias df='df -h'
 alias du='du -h'
 alias free='free -h'
-alias bc='bc -q'
+alias bc='bc -ql'
 alias bat='bat --theme OneHalfDark'
 alias cat='bat --theme OneHalfDark -p'
 alias pu='pushd'
