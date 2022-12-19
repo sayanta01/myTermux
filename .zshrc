@@ -47,7 +47,7 @@ bindkey '^K' kill-line
 #PROMPT_EOL_MARK="" 
 
 # Time format
-#TIMEFMT=$'\ntotal\t%E\nuser\t%U\nsys\t%S\ncpu\t%P'
+TIMEFMT=$'\ntotal\t%E\nuser\t%U\nsys\t%S\ncpu\t%P'
 
 # Enable completion 
 autoload -Uz compinit && compinit
@@ -149,7 +149,7 @@ alias myip='curl ifconfig.me; echo'
 alias php-server='php -S 0.0.0.0:8000'
 alias python-server='python -m http.server 8000'
 
-alias hst="history -i 1 -1 | tac | cut -c 8- | fzf | tr -d '\n' | cut -c 19- | tr -d '\n' | xclip -sel c"
+alias hst="history 1 -1 | tac | cut -c 8- | fzf | tr -d '\n' | xclip -sel c"
 alias fonts="magick convert -list font | grep -iE 'font:.*'"
 alias find_='sh -c '\''find $@ 2>&1 | grep -v "Permission denied" >&2'\'' _'
 alias bigfile="du -h -x -s -- * | sort -r -h | head -20"
@@ -173,5 +173,5 @@ alias ffmpeg='ffmpeg -hide_banner'
 alias wget="wget --hsts-file=/dev/null"
 
 alias iv='termimage'
-alias mpc='mpd ; ncmpcpp'
+alias mpc='mpd 2>/dev/null ; ncmpcpp'
 alias vim='nvim'
