@@ -23,7 +23,6 @@ export XDG_STATE_HOME="$HOME/.local/state"
 export XDG_CACHE_HOME="$HOME/.cache"
 
 export LESSHISTFILE="-"
-#export LESS="-R"
 
 #export ANSIBLE_CONFIG="$XDG_CONFIG_HOME/ansible/ansible.cfg"
 #export KODI_DATA="$XDG_DATA_HOME/kodi"
