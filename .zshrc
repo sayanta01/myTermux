@@ -111,15 +111,18 @@ alias ls='ls --color=auto'
 alias lt="exa --icons --tree"
 alias ll="exa --icons -lgha --group-directories-first"
 alias lm='ls -t -1'
-alias ld='ls -d */'
 alias lsn='exa | wc -l'
-alias l-='ls -p | grep -v /'
+alias l-="ls -l | grep -v 'd'"
+alias ld="ls -l | grep -E 'd'"
 alias l.='exa -a | grep -E "^\."'
 
+alias ..='cd ..'
+alias ...='cd ../..'
 alias cp="cp -iv"
 alias mv='mv -iv'
 alias rm='rm -iv'
 alias cr='clear'
+alias less='less -R'
 alias mkdir='mkdir -pv'
 
 alias grep='grep --color=auto'
@@ -141,6 +144,7 @@ alias push='git push origin'
 
 alias rr='curl https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash'
 alias speedtest='curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -'
+alias tb='nc termbin.com 9999'
 alias cht='sh -c '\''curl cheat.sh/$1'\'' _'
 alias rate='sh -c '\''curl rate.sx/$1'\'' _'
 alias wttr_='sh -c '\''curl wttr.in/$1'\'' _'
@@ -150,6 +154,7 @@ alias php-server='php -S 0.0.0.0:8000'
 alias python-server='python -m http.server 8000'
 
 alias hst="history 0 | tac | cut -c 8- | fzf | tr -d '\n' | xclip -sel c"
+alias ff="fd --type f --hidden --exclude .git | fzf | xargs -r $EDITOR"
 alias fonts="magick convert -list font | grep -iE 'font:.*'"
 alias find_='sh -c '\''find $@ 2>&1 | grep -v "Permission denied" >&2'\'' _'
 alias bigfile="du -h -x -s -- * | sort -r -h | head -20"
@@ -173,5 +178,5 @@ alias ffmpeg='ffmpeg -hide_banner'
 alias wget="wget --hsts-file=/dev/null"
 
 alias iv='termimage'
-alias mpc='mpd 2>/dev/null ; ncmpcpp'
+alias mpc='mpd 2>/dev/null; ncmpcpp'
 alias vim='nvim'
