@@ -16,8 +16,6 @@ cmd mkfile ${{
   touch $ans
 }}
 
-cmd setwallpaper %cp "$f" ~/.config/wallpaper.jpg && xwallpaper --zoom "$f"
-
 # Archive bindings
 cmd unarchive ${{
   case "$f" in
@@ -67,8 +65,7 @@ map ae execute
 
 # Basic Functions
 map . set hidden!
-map c $code "$f"
-map C clear
+map c clear
 map dd trash
 map DD delete
 map dr restore_trash
@@ -79,7 +76,6 @@ map md mkdir
 map mf mkfile
 map <enter> open
 map R reload
-map bg setwallpaper
 
 # Movement
 map gd cd ~/dl
