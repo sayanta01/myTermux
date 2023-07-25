@@ -14,7 +14,7 @@ mkdir ~/{desk,dox,dl,music,vids,pix}
 cp -r ~/myTermux/{.colorscheme,.config,.local,.termux,.zshrc,.zprofile} ~/
 chmod +x ~/.local/bin/scripts/*
 
-pkg install -y man bc \
+pkg install -y man \
 proot root-repo tsu \
 fd bat exa tree ripgrep \
 mpd ncmpcpp mpv cava \
@@ -23,15 +23,15 @@ zip unrar tar lf \
 axel wget rsync \
 htop ncdu procs \
 tmux zsh fzf x11-repo \
-rxfetch cowsay termux-api inotify-tools \
+rxfetch termux-api inotify-tools \
 neovim nodejs ueberzug inotify-tools
 # dnsutils android-tools qit xclip
 
 # nvim dependences
 git clone https://github.com/sayanta01/nvim ~/.config/nvim
 npm i -g tree-sitter-cli live-server
-pip install pynvim  
+pip install pynvim
 
+git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.config/zsh/zsh-syntax-highlighting 
 git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.config/zsh/zsh-autosuggestions
-

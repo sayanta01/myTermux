@@ -1,4 +1,4 @@
-cowsay "$(shuf -n 1 ~/.local/share/vocab/words.txt)"
+# cowsay "$(shuf -n 1 ~/.local/share/vocab/words.txt)"
 
 #setopt correct              # auto correct mistakes
 #setopt autocd               # change directory just by typing its name
@@ -95,88 +95,108 @@ PROMPT=' %b%{$fg[yellow]%}❯${vcs_info_msg_0_}%  '
 
 
 ##### ALIAS #####
-alias fix='dpkg --configure -a; apt --fix-broken install -y; apt install -f; apt update --fix-missing'
-alias install='apt install'
-alias update='apt update && apt upgrade'
-alias clean='apt -y autoremove; apt clean'
-alias remove='apt remove --purge'
+alias fix="dpkg --configure -a; apt --fix-broken install -y; apt install -f; apt update --fix-missing"
+alias install="apt install"
+alias update="apt update && apt upgrade"
+alias clean="apt -y autoremove; apt clean"
+alias remove="apt remove --purge"
 
 alias reload="termux-reload-settings"
 alias terper="termux-setup-storage"
 alias pf="cd $PREFIX"
 alias st="cd /storage"
 
-alias la='exa --icons'
-alias ls='ls --color=auto'
+alias la="exa --icons"
+alias ls="ls --color=auto"
 alias lt="exa --icons --tree"
 alias ll="exa --icons -lgha --group-directories-first"
-alias lm='ls -t -1'
-alias lsn='exa | wc -l'
+alias lm="ls -t -1"
+alias lsn="exa | wc -l"
 alias l-="ls -l | grep -v 'd'"
 alias ld="ls -l | grep -E 'd'"
-alias l.='exa -a | grep -E "^\."'
+alias l.='ls -A | grep -E "^\."'
 
-alias ..='cd ..'
-alias ...='cd ../..'
+alias ..="cd .."
+alias ...="cd ../.."
 alias cp="cp -iv"
-alias mv='mv -iv'
-alias rm='rm -iv'
-alias cr='clear'
-alias less='less -R'
-alias mkdir='mkdir -pv'
+alias mv="mv -iv"
+alias rm="rm -iv"
+alias del="gio trash"
+alias tre="trash-restore"
+alias cr="clear"
+alias less="less -R"
+alias mkdir="mkdir -pv"
+alias logout='sudo pkill -u "$USER"'
 
-alias grep='grep --color=auto'
-alias diff='diff --color=auto'
-alias ip='ip --color=auto'
+alias grep="grep --color=auto"
+alias diff="diff --color=auto"
+alias ip="ip --color=auto"
 
-alias add.='git add .'
-alias addup='git add -u'
-alias branch='git branch'
-alias checkout='git checkout'
-alias clone='git clone'
-alias commit='git commit -m'
-alias fetch='git fetch'
-alias status='git status'
-alias tag='git tag'
-alias newtag='git tag -a'
-alias pull='git pull origin'
-alias push='git push origin'
+alias add.="git add ."
+alias addup="git add -u"
+alias branch="git branch"
+alias checkout="git checkout"
+alias clone="git clone"
+alias commit="git commit -m"
+alias fetch="git fetch"
+alias status="git status"
+alias tag="git tag"
+alias newtag="git tag -a"
+alias pull="git pull origin"
+alias push="git push origin"
 
-alias rr='curl https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash'
-alias speedtest='curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -'
-alias tb='nc termbin.com 9999'
-alias cht='sh -c '\''curl cheat.sh/$1'\'' _'
-alias rate='sh -c '\''curl rate.sx/$1'\'' _'
-alias wttr_='sh -c '\''curl wttr.in/$1'\'' _'
-alias typer='xdg-open https://10fastfingers.com/typing-test/english'
-alias myip='curl ifconfig.me; echo'
-alias php-server='php -S 0.0.0.0:8000'
-alias python-server='python -m http.server 8000'
+alias rr="curl https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash"
+alias speedtest="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -"
+alias tb="nc termbin.com 9999"
+alias typer="xdg-open https://10fastfingers.com/typing-test/english"
+cht() {
+	sh -c "curl cheat.sh/$1"
+}
+wttr() {
+	sh -c "curl rate.sx/$1"
+}
+rate() {
+	sh -c "curl wttr.in/$1"
+}
+alias myip="curl ifconfig.me; echo"
+alias php-server="php -S 0.0.0.0:8000"
+alias py-server="python -m http.server 8000"
+alias multitail="multitail --no-repeat -c"
 
-alias hst="history 0 | tac | cut -c 8- | fzf | tr -d '\n' | xclip -sel c"
-alias ff="fd --type f --hidden --exclude .git | fzf | xargs -r $EDITOR"
+alias ff="fd --type f --hidden --exclude .git | fzf --preview "bat --color=always --style=numbers --line-range=:500 {}" | xargs -r "$EDITOR""
 alias fonts="magick convert -list font | grep -iE 'font:.*'"
+alias bigfile="du -hxs * | sort -rh | head"
+alias hst="history 0 | tac | cut -c 8- | fzf | tr -d '\n' | xclip -sel c"
 alias find_='sh -c '\''find $@ 2>&1 | grep -v "Permission denied" >&2'\'' _'
 alias bigfile="du -h -x -s -- * | sort -r -h | head -20"
-alias psmem='ps axch -o cmd,%mem --sort=-%mem | head'
-alias pscpu='ps axch -o cmd,%cpu --sort=-%cpu | head'
+alias psmem="ps axch -o cmd,%mem --sort=-%mem | head"
+alias pscpu="ps axch -o cmd,%cpu --sort=-%cpu | head"
+alias microcode="grep . /sys/devices/system/cpu/vulnerabilities/*"
+alias userlist="cut -d: -f1 /etc/passwd | sort"
+alias audio="pactl info | grep 'Server Name'"
 
-alias ping='ping -c 7'
-alias ports='netstat -tulanp'
-alias copy='rsync --progress -auv'
+alias ping="ping -c 7"
+alias ports="netstat -tulanp"
+alias copy="rsync --progress -auv"
 
-alias df='df -h'
-alias du='du -h'
-alias free='free -h'
-alias bc='bc -ql'
-alias bat='bat --theme OneHalfDark'
-alias cat='bat --theme OneHalfDark -p'
-alias pu='pushd'
-alias po='popd'
-alias shred='shred -uvzn3'
-alias ffmpeg='ffmpeg -hide_banner'
+alias df="df -h"
+alias du="du -h"
+alias free="free -h"
+alias bc="bc -ql"
+alias hw="hwinfo --short"
+alias dmesg="sudo dmesg -T"
+alias shred="shred -uvzn3"
+alias bat="bat --theme OneHalfDark"
+alias cat="bat --theme OneHalfDark -p"
+alias pu="pushd"
+alias po="popd"
+alias ffmpeg="ffmpeg -hide_banner"
+alias ffplay="ffplay -hide_banner"
+alias ffprobe="ffprobe -hide_banner"
 alias wget="wget --hsts-file=/dev/null"
 
-alias iv='termimage'
-alias mpc='mpd 2>/dev/null; ncmpcpp'
-alias vim='nvim'
+alias iv="termimage"
+alias vim="nvim"
+alias mpc="mpd 2>/dev/null; ncmpcpp"
+alias ytdl-vid="yt-dlp -f bestvideo+bestaudio"
+alias ytdl-aud="yt-dlp --extract-audio --audio-format m4a"

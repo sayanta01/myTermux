@@ -23,11 +23,9 @@ export XDG_STATE_HOME="$HOME/.local/state"
 export XDG_CACHE_HOME="$HOME/.cache"
 
 export LESSHISTFILE="-"
-
 #export ANSIBLE_CONFIG="$XDG_CONFIG_HOME/ansible/ansible.cfg"
 #export KODI_DATA="$XDG_DATA_HOME/kodi"
 #export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
 export TMUX_TMPDIR="$XDG_RUNTIME_DIR"
-
 export GOPATH="$XDG_DATA_HOME/.local/share/go"
 export CARGO_HOME="$XDG_DATA_HOME/.local/share/cargo"
