@@ -3,10 +3,10 @@
 ## passwd - set pswd
 # nmap localhost - kw port
 # user xdg-open for play video
-pkg instal openssh git
+# -i openssh git
 
 export COLUMNS LINES
-# cursor underline    
+# cursor underline
 # echo -e "\e[4 q"
 
 cp -r ~/myTermux/{.termux,.colorscheme,.config,.local,.zshrc,.zprofile,.vimrc} ~/
@@ -14,23 +14,16 @@ chmod +x ~/.local/bin/
 mkdir ~/{desk,dox,dl,music,vids,pix}
 
 pkg install -y man \
-proot root-repo tsu \
-fd bat exa tree ripgrep \
-ffmpeg imagemagick termimage \
-zip unrar tar lf \
-aria2 wget rsync \
-htop ncdu procs \
-tmux zsh fzf x11-repo \
-rxfetch termux-api \
-vim neovim inotify-tools xclip
+	proot root-repo tsu \
+	fd bat exa tree ripgrep procs \
+	ffmpeg imagemagick termimage \
+	zip unrar tar lf \
+	aria2 wget rsync \
+	tmux zsh fzf x11-repo \
+	rxfetch htop termux-api \
+	neovim inotify-tools xclip
 # dnsutils android-tools
 
-# nvim dependences
-git clone https://github.com/sayanta01/nvim ~/.config/nvim
-pkg install python-pip clang nodejs golang shellcheck stylua luarocks php 
-npm i -g tree-sitter-cli live-server typescript
-pip install pynvim
-
 git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.config/zsh/zsh-syntax-highlighting 
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.config/zsh/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.config/zsh/zsh-autosuggestions
