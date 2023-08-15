@@ -69,7 +69,6 @@ setopt hist_verify             # show command with history expansion to user bef
 
 # Plugins
 source ~/.zprofile
-#source ~/.config/zsh/zsh-fzf-history-search.zsh 2>/dev/null
 source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
 
@@ -104,7 +103,7 @@ alias remove="apt remove --purge"
 alias reload="termux-reload-settings"
 alias terper="termux-setup-storage"
 alias pf="cd $PREFIX"
-alias st="cd /storage"
+alias st="cd $HOME/storage"
 
 alias la="exa --icons"
 alias ls="ls --color=auto"
@@ -113,8 +112,8 @@ alias ll="exa --icons -lgha --group-directories-first"
 alias lm="ls -t -1"
 alias lsn="exa | wc -l"
 alias l-="ls -l | grep -v 'd'"
-alias ld="ls -l | grep -E 'd'"
-alias l.='ls -A | grep -E "^\."'
+alias ld="ls -l | grep '^d'"
+alias l.="ls -A | grep '^\.'"
 
 alias ..="cd .."
 alias ...="cd ../.."
@@ -126,7 +125,7 @@ alias tre="trash-restore"
 alias cr="clear"
 alias less="less -R"
 alias mkdir="mkdir -pv"
-alias logout='sudo pkill -u "$USER"'
+alias logout='pkill -u "$USER"'
 
 alias grep="grep --color=auto"
 alias diff="diff --color=auto"
@@ -167,14 +166,10 @@ alias ff="fd --type f --hidden --exclude .git | fzf --preview "bat --color=alway
 alias fonts="magick convert -list font | grep -iE 'font:.*'"
 alias bigfile="du -hxs * | sort -rh | head"
 alias hst="history 0 | tac | cut -c 8- | fzf | tr -d '\n' | xclip -sel c"
-alias find_='sh -c '\''find $@ 2>&1 | grep -v "Permission denied" >&2'\'' _'
-alias bigfile="du -h -x -s -- * | sort -r -h | head -20"
 alias psmem="ps axch -o cmd,%mem --sort=-%mem | head"
 alias pscpu="ps axch -o cmd,%cpu --sort=-%cpu | head"
-alias microcode="grep . /sys/devices/system/cpu/vulnerabilities/*"
-alias userlist="cut -d: -f1 /etc/passwd | sort"
 
-alias ping="ping -c 7"
+alias ping="ping -c 6"
 alias ports="netstat -tulanp"
 alias copy="rsync --progress -auv"
 

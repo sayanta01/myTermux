@@ -1,34 +1,34 @@
 #!/bin/sh
 
-# create user & set pswd
-# nmap localhost  - kw port
+## passwd - set pswd
+# nmap localhost - kw port
 # user xdg-open for play video
+pkg instal openssh git
 
 export COLUMNS LINES
-#cursor underline    
+# cursor underline    
 # echo -e "\e[4 q"
 
-pkg update && pkg upgrade
+cp -r ~/myTermux/{.termux,.colorscheme,.config,.local,.zshrc,.zprofile,.vimrc} ~/
+chmod +x ~/.local/bin/
 mkdir ~/{desk,dox,dl,music,vids,pix}
-
-cp -r ~/myTermux/{.colorscheme,.config,.local,.termux,.zshrc,.zprofile} ~/
-chmod +x ~/.local/bin/scripts/*
 
 pkg install -y man \
 proot root-repo tsu \
 fd bat exa tree ripgrep \
 ffmpeg imagemagick termimage \
 zip unrar tar lf \
-axel wget rsync \
+aria2 wget rsync \
 htop ncdu procs \
 tmux zsh fzf x11-repo \
 rxfetch termux-api \
-neovim nodejs inotify-tools
-# dnsutils android-tools qit xclip
+vim neovim inotify-tools xclip
+# dnsutils android-tools
 
 # nvim dependences
 git clone https://github.com/sayanta01/nvim ~/.config/nvim
-npm i -g tree-sitter-cli live-server
+pkg install python-pip clang nodejs golang shellcheck stylua luarocks php 
+npm i -g tree-sitter-cli live-server typescript
 pip install pynvim
 
 git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm

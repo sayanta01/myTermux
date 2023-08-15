@@ -3,6 +3,14 @@ set hidden true
 set ignorecase true
 set icons true
 
+# Cmds/Functions
+cmd open ${{
+    case $(file --mime-type "$f" -bL) in
+        text/*|application/json) $EDITOR "$f";;
+        *) xdg-open "$f" ;;
+    esac
+}}
+
 # Create file
 cmd mkfile ${{
   printf "File Name: "
@@ -28,11 +36,6 @@ cmd extract ${{
   esac
 }}
 
-# Execute exe
-cmd execute ${{
-	wine "$f"
-}}
-
 # Trash bindings
 cmd trash ${{
   files=$(printf "$fx" | tr '\n' ';')
@@ -55,28 +58,29 @@ cmd restore_trash ${{
 # Bindings
 # Remove some defaults
 map m
-map o
 map n
+map d
+map o
 map "'"
 map '"'
-map d
-
-map au unarchive
-map ae execute
 
 # Basic Functions
 map . set hidden!
-map c clear
+map E extract
+map ae $bash "$f"
 map dd trash
 map DD delete
 map dr restore_trash
+map md mkdir
+map mf mkfile
 map x cut
 map y copy
 map p paste
-map md mkdir
-map mf mkfile
-map <enter> open
+map r rename
 map R reload
+map U unselect
+map L clear
+map <enter> open
 
 # Movement
 map gd cd ~/dl
