@@ -173,7 +173,6 @@ alias psmem="ps axch -o cmd,%mem --sort=-%mem | head"
 alias pscpu="ps axch -o cmd,%cpu --sort=-%cpu | head"
 alias microcode="grep . /sys/devices/system/cpu/vulnerabilities/*"
 alias userlist="cut -d: -f1 /etc/passwd | sort"
-alias audio="pactl info | grep 'Server Name'"
 
 alias ping="ping -c 7"
 alias ports="netstat -tulanp"

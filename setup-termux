@@ -17,14 +17,13 @@ chmod +x ~/.local/bin/scripts/*
 pkg install -y man \
 proot root-repo tsu \
 fd bat exa tree ripgrep \
-mpd ncmpcpp mpv cava \
 ffmpeg imagemagick termimage \
 zip unrar tar lf \
 axel wget rsync \
 htop ncdu procs \
 tmux zsh fzf x11-repo \
-rxfetch termux-api inotify-tools \
-neovim nodejs ueberzug inotify-tools
+rxfetch termux-api \
+neovim nodejs inotify-tools
 # dnsutils android-tools qit xclip
 
 # nvim dependences
