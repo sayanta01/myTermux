@@ -147,15 +147,14 @@ alias push="git push origin"
 alias rr="curl https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash"
 alias speedtest="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -"
 alias tb="nc termbin.com 9999"
-alias typer="xdg-open https://10fastfingers.com/typing-test/english"
 cht() {
 	sh -c "curl cheat.sh/$1"
 }
 wttr() {
-	sh -c "curl rate.sx/$1"
+  sh -c "curl wttr.in/$1"
 }
 rate() {
-	sh -c "curl wttr.in/$1"
+  sh -c "curl rate.sx/$1"
 }
 alias myip="curl ifconfig.me; echo"
 alias php-server="php -S 0.0.0.0:8000"
@@ -177,8 +176,6 @@ alias df="df -h"
 alias du="du -h"
 alias free="free -h"
 alias bc="bc -ql"
-alias hw="hwinfo --short"
-alias dmesg="sudo dmesg -T"
 alias shred="shred -uvzn3"
 alias bat="bat --theme OneHalfDark"
 alias cat="bat --theme OneHalfDark -p"

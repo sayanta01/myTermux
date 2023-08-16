@@ -11,7 +11,6 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
  
 # Paths
 export PATH="$PATH:$(du "$HOME/.local/bin" | cut -f2 | paste -sd ':')"
-# export PATH=$PATH:$HOME/.local/share/cargo/bin
 
 # Default programs
 export EDITOR="nvim"
@@ -25,4 +24,3 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export LESSHISTFILE="-"
 export TMUX_TMPDIR="$XDG_RUNTIME_DIR"
 export GOPATH="$XDG_DATA_HOME/.local/share/go"
-# export CARGO_HOME="$XDG_DATA_HOME/.local/share/cargo"
