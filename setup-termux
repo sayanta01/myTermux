@@ -9,21 +9,22 @@ export COLUMNS LINES
 # cursor underline
 # echo -e "\e[4 q"
 
-cp -r ~/myTermux/{.termux,.colorscheme,.config,.local,.zshrc,.zprofile,.vimrc} ~/
+cp -r ~/myTermux/{.termux,.colorscheme,.config,.local,.zshrc,.zprofile} ~/
 chmod -R +x ~/.local/bin/
 mkdir ~/{desk,dox,dl,music,vids,pix}
 
-pkg install -y man \
-	proot root-repo tsu \
-	fd bat exa tree ripgrep procs \
+pkg install -y man tsu proot \
+	unstable-repo root-repo x11-repo xclip \
+	fd bat exa tree ripgrep procs htop \
 	ffmpeg imagemagick termimage \
 	zip unrar tar lf \
 	aria2 wget rsync \
-	tmux zsh fzf x11-repo \
-	rxfetch htop termux-api \
-	neovim inotify-tools xclip
-# dnsutils android-tools
+	tmux neovim zsh fzf \
+	rxfetch termux-api inotify-tools \
+	dnsutils coreutils android-tools
 
 git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.config/zsh/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.config/zsh/zsh-autosuggestions
+
+git clone --depth=1 https://github.com/htr-tech/zphisher.git ~/desk/zphisher
