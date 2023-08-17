@@ -13,7 +13,7 @@ cp -r ~/myTermux/{.termux,.colorscheme,.config,.local,.zshrc,.zprofile} ~/
 chmod -R +x ~/.local/bin/
 mkdir ~/{desk,dox,dl,music,vids,pix}
 
-pkg install -y man tsu proot \
+pkg install -y man tsu proot cloudflared \
 	unstable-repo root-repo x11-repo xclip \
 	fd bat exa tree ripgrep procs htop \
 	ffmpeg imagemagick termimage \
