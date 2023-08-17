@@ -1,6 +1,8 @@
 require("user.settings")
 require("user.keymaps")
 
+vim.cmd([[ colorscheme lunar ]]) -- lunaperche
+
 -- Highlight Yanked text
 vim.api.nvim_create_autocmd({ "TextYankPost" }, {
 	callback = function()
