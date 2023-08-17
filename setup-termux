@@ -20,7 +20,7 @@ pkg install -y man cloudflared \
 	zip unrar tar lf \
 	aria2 wget rsync \
 	tmux neovim zsh fzf \
-	rxfetch termux-api inotify-tools \
+	rxfetch termux-api \
 	dnsutils coreutils android-tools
 
 git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
