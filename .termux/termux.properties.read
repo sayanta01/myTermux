@@ -1,6 +1,6 @@
 ### After making changes and saving you need to run `termux-reload-settings`
 ### to update the terminal.  All information here can also be found on the
-### wiki: https://wiki.termux.com/wiki/Terminal_Settings
+### https://wiki.termux.com/wiki/Terminal_Settings
 
 ###############
 # Extra keys
@@ -42,23 +42,23 @@
 # Bell key
 ###############
 
-### Vibrate device (default).
+### Vibrate device (default)
 # bell-character = vibrate
 
-### Beep with a sound.
+### Beep with a sound
 # bell-character = beep
 
-### Ignore bell character.
+### Ignore bell character
 # bell-character = ignore
 
 ###############
 # Back key
 ###############
 
-### Send the Escape key.
+### Send the Escape key
 # back-key=escape
 
-### Hide keyboard or leave app (default).
+### Hide keyboard or leave app (default)
 # back-key=back
 
 ###############
