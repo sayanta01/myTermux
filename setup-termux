@@ -15,8 +15,8 @@ mkdir ~/{desk,dox,dl,music,vids,pix}
 
 pkg install -y man cloudflared \
 	unstable-repo root-repo x11-repo xclip \
-	fd bat exa tree ripgrep procs htop \
-	ffmpeg imagemagick termimage \
+	fd bat exa tree procs \
+	imagemagick termimage \
 	zip unrar tar lf \
 	aria2 wget rsync \
 	tmux neovim zsh fzf \
