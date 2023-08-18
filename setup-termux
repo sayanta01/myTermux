@@ -30,3 +30,5 @@ git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.
 git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions.git ~/.config/zsh/zsh-autosuggestions
 
 git clone --depth=1 https://github.com/htr-tech/zphisher.git ~/desk/zphisher
+
+# https://wiki.termux.com/wiki/Termux:API
