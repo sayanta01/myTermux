@@ -1,5 +1,6 @@
 local options = {
 	-- showmode = false,
+  relativenumber = true,
 	fileencoding = "utf-8",
 	writebackup = false,
 	swapfile = false,
