@@ -2,8 +2,6 @@
 
 ## passwd - set pswd
 # nmap localhost - kw port
-# user xdg-open for play video
-# -i openssh git
 
 export COLUMNS LINES
 # cursor underline
@@ -11,20 +9,24 @@ export COLUMNS LINES
 
 cp -r ~/myTermux/{.termux,.colorscheme,.config,.local,.zshrc,.zprofile} ~/
 chmod -R +x ~/.local/bin/
-mkdir ~/{desk,dox,dl,music,vids,pix}
 
-pkg install -y man cloudflared \
-	unstable-repo root-repo x11-repo xclip \
+for dir in desk dox dl music vids pix; do
+	mkdir ~/"$dir"
+done
+
+pkg install -y nmap openssh man cloudflared \
+	unstable-repo root-repo x11-repo \
 	fd bat exa tree procs \
 	imagemagick termimage \
-	zip unrar tar lf \
+	zip unrar lf \
 	aria2 wget rsync \
 	tmux neovim zsh fzf \
 	rxfetch termux-api \
 	dnsutils coreutils android-tools
+# xclip
 
-git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.config/zsh/zsh-syntax-highlighting
-git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.config/zsh/zsh-autosuggestions
+git clone --depth=1 https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
+git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.config/zsh/zsh-syntax-highlighting
+git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions.git ~/.config/zsh/zsh-autosuggestions
 
 git clone --depth=1 https://github.com/htr-tech/zphisher.git ~/desk/zphisher
