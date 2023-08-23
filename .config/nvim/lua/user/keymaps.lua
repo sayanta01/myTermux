@@ -9,10 +9,6 @@ keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " " -- meant for a specific buffer, you generally use it based on a filetype
 
--- Modes
--- term_mode = "t",
--- command_mode = "c",
-
 -- Normal --
 keymap("n", "<leader>w", ":w!<cr>", opts)
 keymap("n", "<leader>q", ":q!<cr>", opts)
@@ -46,10 +42,6 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
---[[ keymap("n", "<S-o>", ":BufferLineMoveNext<CR>", opts) -- fix this ]]
---[[ keymap("n", "<S-i>", ":BufferLineMovePrev<CR>", opts) -- fix this ]]
-
--- New buffer
 keymap("n", "<S-b>", ":enew <CR>", opts)
 
 -- Delete (not cut)

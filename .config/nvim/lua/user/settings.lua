@@ -1,12 +1,11 @@
 local options = {
-	-- showmode = false,
-  relativenumber = true,
+	showmode = false,
 	fileencoding = "utf-8",
 	writebackup = false,
 	swapfile = false,
 	hidden = true,
 	undofile = true,
-	-- updatetime = 260,
+	updatetime = 260,
 	backup = false,
 	cursorline = true,
 	expandtab = true,
@@ -14,29 +13,22 @@ local options = {
 	tabstop = 2,
 	completeopt = { "menuone", "noselect" },
 	clipboard = "unnamedplus",
-  --[[ showcmd = false, ]]
-	-- mouse = "a",
 	confirm = true,
 	splitbelow = true,
 	splitright = true,
-	-- signcolumn = "yes",
+	signcolumn = "yes",
 	smartcase = true,
+	smartindent = true,
 	ignorecase = true,
-	hlsearch = true,
-	-- wrap = false,
+	wrap = false,
 	number = true,
+  relativenumber = true,
 	scrolloff = 6,
 	sidescrolloff = 8,
-  --[[ spell = false, -- need to start manually ]]
-
-	-- termguicolors = true,
-	-- conceallevel = 0,
-	-- pumheight = 9,
-	-- cmdheight = 2,
-	-- showtabline = 2,
-	-- smartindent = true,
-	-- copyindent = true,  -- copy the previous indentation on autoindenting
+	termguicolors = true,
+	conceallevel = 0,
 	-- fillchars = { eob = " " },  -- disable `~` on nonexistent lines
+  -- copyindent = true,  -- copy the previous indentation on autoindenting
 	-- preserveindent = true,  -- preserve indent structure as much as possible
 }
 
@@ -50,8 +42,8 @@ vim.opt.whichwrap:append("<,>,[,],h,l")
 -- vim.opt.iskeyword:append("-")
 
 -- Disable builtin plugins
--- vim.g.loaded_netrw = 1
--- vim.g.loaded_netrwPlugin = 1
+--[[ vim.g.loaded_netrw = 1 ]]
+--[[ vim.g.loaded_netrwPlugin = 1 ]]
 vim.g.loaded_netrwSettings = 1
 vim.g.loaded_netrwFileHandlers = 1
 vim.g.loaded_2html_plugin = 1
