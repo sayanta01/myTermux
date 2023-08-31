@@ -16,6 +16,8 @@ keymap("n", "<leader>x", ":bdelete<cr>", opts)
 keymap("n", "<leader>h", ":nohlsearch<cr>", opts)
 keymap("n", "<leader>y", "gg<S-v>G", opts)
 
+keymap("n", "<leader>e", ":Ex<cr>", opts)
+
 -- Half down/up
 keymap("n", "<C-d>", "<C-d>zz", opts)
 keymap("n", "<C-u>", "<C-u>zz", opts)
