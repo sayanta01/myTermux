@@ -1,4 +1,0 @@
-#!/bin/sh
-
-emoji="$(cat $HOME/.local/share/emoji | fzf | cut -d' ' -f1)"
-echo "$emoji" | tr "\n" " " | xclip -sel c

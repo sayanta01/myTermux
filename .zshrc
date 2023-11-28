@@ -1,14 +1,14 @@
 # cowsay "$(shuf -n 1 ~/.local/share/vocab/words.txt)"
 
-#setopt correct              # auto correct mistakes
-setopt autocd                # change directory just by typing its name
-#setopt interactivecomments  # allow comments in interactive mode
-setopt extendedglob
-setopt magicequalsubst      # enable filename expansion for arguments of the form ‘anything=expression’
-setopt nonomatch            # hide error message if there is no match for the pattern
-setopt notify               # report the status of background jobs immediately
-setopt numericglobsort      # sort filenames numerically when it makes sense
-setopt promptsubst          # enable command substitution in prompt
+setopt autocd                 # change directory just by typing its name
+# setopt interactivecomments  # allow comments in interactive mode
+# setopt extendedglob
+# setopt correct              # auto correct mistakes
+# setopt magicequalsubst      # enable filename expansion for arguments of the form ‘anything=expression’
+# setopt nonomatch            # hide error message if there is no match for the pattern
+# setopt notify               # report the status of background jobs immediately
+# setopt numericglobsort      # sort filenames numerically when it makes sense
+# setopt promptsubst          # enable command substitution in prompt
 
 # Configure keybindings
 bindkey -e                                        # emacs key bindings
@@ -44,7 +44,7 @@ bindkey '^K' kill-line
 #bindkey '^D' exit_zsh
 
 # Hide EOL sign ('%')
-#PROMPT_EOL_MARK="" 
+# PROMPT_EOL_MARK="" 
 
 # Time format
 TIMEFMT=$'\ntotal\t%E\nuser\t%U\nsys\t%S\ncpu\t%P'
@@ -63,7 +63,7 @@ HISTSIZE=2000
 SAVEHIST=2000
 HISTFILE=~/.zsh_history
 setopt hist_ignore_space       # ignore commands that start with space
-setopt hist_expire_dups_first  # delete duplicates first when HISTFILE size exceeds HISTSIZE
+# setopt hist_expire_dups_first  # delete duplicates first when HISTFILE size exceeds HISTSIZE
 setopt hist_ignore_all_dups    # ignore duplicated commands history list
 setopt hist_verify             # show command with history expansion to user before running it
 
@@ -115,21 +115,20 @@ alias l-="ls -l | grep -v 'd'"
 alias ld="ls -l | grep '^d'"
 alias l.="ls -A | grep '^\.'"
 
+alias grep="grep --color=auto"
+alias diff="diff --color=auto"
+alias ip="ip --color=auto"
+
 alias ..="cd .."
 alias ...="cd ../.."
 alias cp="cp -iv"
 alias mv="mv -iv"
 alias rm="rm -iv"
 alias del="gio trash"
-alias tre="trash-restore"
 alias cr="clear"
 alias less="less -R"
 alias mkdir="mkdir -pv"
 alias logout='pkill -u "$USER"'
-
-alias grep="grep --color=auto"
-alias diff="diff --color=auto"
-alias ip="ip --color=auto"
 
 alias add.="git add ."
 alias addup="git add -u"
@@ -163,7 +162,7 @@ alias multitail="multitail --no-repeat -c"
 
 alias ff="fd --type f --hidden --exclude .git | fzf --preview "bat --color=always --style=numbers --line-range=:500 {}" | xargs -r "$EDITOR""
 alias fonts="magick convert -list font | grep -iE 'font:.*'"
-alias bigfile="du -hxs * | sort -rh | head"
+alias bigf="du -hxs * | sort -rh | head"
 alias hst="history 0 | tac | cut -c 8- | fzf | tr -d '\n' | xclip -sel c"
 alias psmem="ps axch -o cmd,%mem --sort=-%mem | head"
 alias pscpu="ps axch -o cmd,%cpu --sort=-%cpu | head"
