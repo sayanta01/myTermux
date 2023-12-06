@@ -4,10 +4,10 @@ setopt autocd                 # change directory just by typing its name
 # setopt interactivecomments  # allow comments in interactive mode
 # setopt extendedglob
 # setopt correct              # auto correct mistakes
+# setopt numericglobsort      # sort filenames numerically when it makes sense
 # setopt magicequalsubst      # enable filename expansion for arguments of the form ‘anything=expression’
 # setopt nonomatch            # hide error message if there is no match for the pattern
 # setopt notify               # report the status of background jobs immediately
-# setopt numericglobsort      # sort filenames numerically when it makes sense
 # setopt promptsubst          # enable command substitution in prompt
 
 # Configure keybindings
@@ -26,22 +26,6 @@ bindkey '^[[6~' end-of-buffer-or-history          # page down
 bindkey '^[[H' beginning-of-line                  # home
 bindkey '^[[F' end-of-line                        # end
 bindkey '^[[Z' undo                               # shift + Tab undo last action
-bindkey '^K' kill-line
-
-#bindkey "^A" vi-beginning-of-line
-#bindkey '^E' end-of-line
-#bindkey '^H' backward-kill-word                   # forward del word 
-#bindkey '^K' kill-line
-#bindkey '^B' backward-char
-#bindkey '^F' forward-char
-#bindkey '^N' down-line-or-history
-#bindkey '^P' up-line-or-history
-#bindkey '^O' forward-word
-#bindkey '^J' backward-word
-#bindkey '^I' expand-or-complete
-#bindkey '^T' transpose-chars
-#bindkey '^R' history-incremental-search-backward
-#bindkey '^D' exit_zsh
 
 # Hide EOL sign ('%')
 # PROMPT_EOL_MARK="" 
@@ -50,7 +34,7 @@ bindkey '^K' kill-line
 TIMEFMT=$'\ntotal\t%E\nuser\t%U\nsys\t%S\ncpu\t%P'
 
 # Enable completion 
-autoload -Uz compinit && compinit
+autoload -Uz compinit && compinit -d $HOME/.cache/zcompdump
 zmodload zsh/complist
 _comp_options+=(globdots)		# Include hidden files
 zstyle ':completion:*' menu select
@@ -61,9 +45,8 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 # History configurations
 HISTSIZE=2000
 SAVEHIST=2000
-HISTFILE=~/.zsh_history
+HISTFILE="$HOME/.local/share/history"
 setopt hist_ignore_space       # ignore commands that start with space
-# setopt hist_expire_dups_first  # delete duplicates first when HISTFILE size exceeds HISTSIZE
 setopt hist_ignore_all_dups    # ignore duplicated commands history list
 setopt hist_verify             # show command with history expansion to user before running it
 
@@ -76,7 +59,6 @@ source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
 autoload -Uz vcs_info colors && colors
 precmd() { vcs_info }
 setopt prompt_subst
-
 zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
 +vi-git-untracked(){
     if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]] && \
@@ -84,14 +66,9 @@ zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
         hook_com[staged]+='!' 
     fi
 }
-
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:git:*' formats " %{$fg[blue]%}(%{$fg[red]%}%m%u%c%{$fg[yellow]%}%{$fg[magenta]%} %b%{$fg[blue]%})"
-
 PROMPT=' %b%{$fg[yellow]%}❯${vcs_info_msg_0_}%  '
-#PROMPT=' %b%{$fg[red]%}(%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[magenta]%}%M%{$fg[white]%}  %{$fg[red]%})%{$fg[white]%} ${vcs_info_msg_0_} ~%  '
-# %b  %{$fg[red]%}(  %{$fg[yellow]%}%n  %{$fg[green]%}@  %{$fg[magenta]%}%M   %{$fg[white]%}   %{$fg[red]%})  %{$fg[white]%}
-
 
 ##### ALIAS #####
 alias fix="dpkg --configure -a; apt --fix-broken install -y; apt install -f; apt update --fix-missing"
