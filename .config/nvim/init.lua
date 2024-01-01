@@ -3,15 +3,21 @@ require("user.keymaps")
 
 vim.cmd([[ colorscheme habamax ]]) -- lunaperche
 
--- Highlight Yanked text
+local function augroup(name)
+	return vim.api.nvim_create_augroup("lazyVim_" .. name, { clear = true })
+end
+
+-- Highlight on yank
 vim.api.nvim_create_autocmd({ "TextYankPost" }, {
+	group = augroup("highlight_yank"),
 	callback = function()
-		vim.highlight.on_yank({ higroup = "Visual", timeout = 200 })
+		vim.highlight.on_yank({ higroup = "Search", timeout = 200 })
 	end,
 })
 
--- Restore last cursor position
+-- Restore cursor last position
 vim.api.nvim_create_autocmd("BufReadPost", {
+	group = augroup("last_loc"),
 	callback = function()
 		local mark = vim.api.nvim_buf_get_mark(0, '"')
 		local lcount = vim.api.nvim_buf_line_count(0)
@@ -21,8 +27,9 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 	end,
 })
 
--- Disable the concealing in some file formats
+-- Disable the concealing in some files
 vim.api.nvim_create_autocmd("FileType", {
+	group = augroup("concealing_means_hidden"),
 	pattern = { "json", "jsonc", "markdown" },
 	callback = function()
 		vim.opt.conceallevel = 0

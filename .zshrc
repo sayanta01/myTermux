@@ -164,6 +164,6 @@ alias wget="wget --hsts-file=/dev/null"
 
 alias iv="termimage"
 alias vim="nvim"
-alias mpc="mpd 2>/dev/null; ncmpcpp"
+alias mpc="mpd 2>/dev/null && ncmpcpp"
 #alias ytdl-vid="yt-dlp -f bestvideo+bestaudio"
 #alias ytdl-aud="yt-dlp --extract-audio --audio-format m4a"
