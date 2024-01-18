@@ -39,7 +39,7 @@ opt.sidescrolloff = 8
 opt.termguicolors = true
 opt.signcolumn = "yes" -- always show the sign column, otherwise it would shift the text each time
 
--- know this
+-- Misc
 opt.fileencoding = "utf-8"
 opt.writebackup = false -- disable making a backup before overwriting a file
 opt.backup = false -- creates a backup file
@@ -82,7 +82,6 @@ local disabled_built_ins = {
 	"bugreport",
 	"ftplugin",
 	"health",
-	"man",
 }
 
 for _, plugin in pairs(disabled_built_ins) do

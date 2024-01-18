@@ -7,12 +7,14 @@ export COLUMNS LINES
 # cursor underline
 # echo -e "\e[4 q"
 
-cp -r ~/myTermux/{.termux,.colorscheme,.config,.local,.zshrc,.zprofile} ~/
-chmod -R +x ~/.local/bin/
-
 for dir in desk dox dl music vids pix; do
-	mkdir ~/"$dir"
+  mkdir -p ~/"$dir"
 done
+
+for dots in .termux .colorscheme .config .local .zshrc .zprofile; do
+	cp -r "$HOME/myTermux/$dots" "$HOME"
+done
+chmod -R +x ~/.local/bin/
 
 pkg install -y nmap openssh man cloudflared \
 	unstable-repo root-repo x11-repo \
