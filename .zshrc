@@ -71,7 +71,7 @@ zstyle ':vcs_info:git:*' formats " %{$fg[blue]%}(%{$fg[red]%}%m%u%c%{$fg[yellow]
 PROMPT=' %b%{$fg[yellow]%}❯${vcs_info_msg_0_}%  '
 
 ##### ALIAS #####
-alias fix="dpkg --configure -a; apt --fix-broken install -y; apt install -f; apt update --fix-missing"
+alias fix-pkg="dpkg --configure -a; apt --fix-broken install -y; apt install -f; apt update --fix-missing"
 alias install="apt install"
 alias update="apt update && apt upgrade"
 alias clean="apt -y autoremove; apt clean"
